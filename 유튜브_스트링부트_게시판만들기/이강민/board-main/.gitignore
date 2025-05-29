@@ -1,20 +1,20 @@
+# === Gradle ===
 .gradle/
 build/
-out/
-bin/
-.nb-gradle/
-nbbuild/
-nbdist/
-nbproject/private/
-dist/
+!src/main/resources/application.yml
+!src/main/resources/templates/
+!src/main/resources/templates/*.html
 
+# === IntelliJ IDEA ===
 .idea/
 *.iml
 *.ipr
 *.iws
 
+# === VS Code ===
 .vscode/
 
+# === STS (Spring Tool Suite) ===
 .apt_generated
 .classpath
 .factorypath
@@ -23,29 +23,33 @@ dist/
 .springBeans
 .sts4-cache
 
-*.log
-*.tmp
-
+# === OS 관련 ===
 .DS_Store
 Thumbs.db
 
+# === Java 빌드 결과물 ===
 *.class
 *.jar
 *.war
 *.ear
-
 /test-output/
+out/
+bin/
 
-!gradle/wrapper/gradle-wrapper.jar
-!**/src/main/**/build/
-!**/src/test/**/build/
-!**/src/main/**/out/
-!**/src/test/**/out/
-!**/src/main/**/bin/
-!**/src/test/**/bin/
+# === NetBeans ===
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
 
+# === 예외 처리: GitHub에 포함할 중요한 파일들 ===
 !build.gradle
 !settings.gradle
 !README.md
 !gradlew
 !gradlew.bat
+!**/src/main/**/application.yml
+!**/src/main/**/templates/
+!**/src/main/**/templates/*.html
+!**/src/test/**/BoardApplicationTests.java
