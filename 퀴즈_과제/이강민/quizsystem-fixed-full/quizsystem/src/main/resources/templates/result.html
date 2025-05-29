@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>결과</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<h2>퀴즈 완료!</h2>
+
+<p class="score" th:if="${total == 0}">문제가 없었습니다.</p>
+<p class="score" th:if="${total > 0}" th:text="'최종 점수: ' + ${finalScore} + ' / ' + ${total}">점수</p>
+
+<br/>
+<a href="/restart">
+    <button>다시 시작하기</button>
+</a>
+</body>
+</html>
