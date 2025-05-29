@@ -1,6 +1,1 @@
-*
-!*/
-!*.java
-!.gitignore
-.idea/
-out/
+# .gitignore 비워두기 (모든 파일 Git에 포함됨)

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>퀴즈</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<h2 th:text="${quiz.question}">문제</h2>
+
+<form th:action="@{/submit}" method="post">
+    <ul th:if="${quiz.options != null and !#lists.isEmpty(quiz.options)}">
+        <li th:each="opt : ${quiz.options}">
+            <label class="option">
+                <input type="radio" name="answer" th:value="${opt.content}" required />
+                <span th:text="${opt.content}">선택지</span>
+            </label>
+        </li>
+    </ul>
+
+    <div th:if="${quiz.options == null or #lists.isEmpty(quiz.options)}">
+        <input type="text" name="answer" placeholder="정답을 입력하세요" required />
+    </div>
+
+    <button type="submit">제출</button>
+</form>
+
+<p class="score" th:if="${score != null and total != null}"
+   th:text="'현재 점수: ' + ${score} + ' / ' + ${total}">점수</p>
+</body>
+</html>

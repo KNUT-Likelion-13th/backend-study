@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>정답 확인</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<h2 th:if="${isCorrect != null}"
+    th:text="${isCorrect} ? '정답입니다! 🎉' : '오답입니다 😢'"></h2>
+
+<p th:if="${isCorrect != null and !isCorrect}">
+    정답: <strong th:text="${correctAnswer}"></strong>
+</p>
+
+<p th:if="${score != null and total != null}"
+   th:text="'현재 점수: ' + ${score} + ' / ' + ${total}"></p>
+
+<form th:action="@{/next}" method="post">
+    <button type="submit">다음 문제</button>
+</form>
+</body>
+</html>
