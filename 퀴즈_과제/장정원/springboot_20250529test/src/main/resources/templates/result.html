@@ -1,0 +1,15 @@
+<!-- src/main/resources/templates/result.html -->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>결과 페이지</title>
+</head>
+<body>
+<h1>결과</h1>
+<p>총 <strong th:text="${total}"></strong>문제 중
+    <strong th:text="${score}"></strong>문제를 맞췄습니다!</p>
+
+<a href="/quiz">다시 풀기</a>
+</body>
+</html>

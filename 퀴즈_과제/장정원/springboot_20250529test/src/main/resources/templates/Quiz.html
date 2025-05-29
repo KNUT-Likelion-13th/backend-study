@@ -1,0 +1,22 @@
+<!-- src/main/resources/templates/quiz.html -->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>퀴즈 페이지</title>
+</head>
+<body>
+<h1>퀴즈에 답해주세요!</h1>
+
+<form action="/submit" method="post">
+    <div th:each="quiz, iterStat : ${quizzes}">
+        <p>
+            <strong>문제 [[${iterStat.index + 1}]]:</strong>
+            [[${quiz.question}]]
+        </p>
+        <input type="text" name="answers" placeholder="정답 입력"/><br><br>
+    </div>
+    <button type="submit">제출하기</button>
+</form>
+</body>
+</html>
